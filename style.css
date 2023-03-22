@@ -1,0 +1,32 @@
+.link {
+text-decoration: none;
+background: palegoldenrod;
+color: black;
+
+}
+
+.link:visited {
+background: white;
+color: black;
+
+}
+
+.link:focus {
+border: 1px solid blue;
+text-decoration: none;
+background: white;
+color: black;
+}
+
+.link:hover {
+color: blue;
+}
+
+.link:active {
+
+}
+
+.nome{
+  text-decoration: none;
+  color: black;
+}
