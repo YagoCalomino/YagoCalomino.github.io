@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <!--Fim Goole Fonts-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
@@ -17,25 +17,26 @@
   <header>
     <div class="interface">
       <div class="logo">
-        <a href="#inicio">
+        <a href="">
           <img src="images/Logo.png" alt="Logo">
         </a>
       </div><!--logo-->
 
       <nav class="menu-desktop">
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#especialidades">Especialidades</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#" data-target="inicio">Inicio</a></li>
+            <li><a href="#" data-target="especialidades">Especialidades</a></li>
+            <li><a href="#" data-target="sobre">Sobre</a></li>
+            <li><a href="#" data-target="projetos">Projetos</a></li>
         </ul>
-      </nav>
+    </nav>
+    
 
-      <div class="btn-contato">
-        <a href="#contato">
-          <button>Contato</button>
-        </a>
-      </div><!--btn-contato-->
+    <div class="btn-contato">
+      <a href="#" data-target="contato">
+        <button>Contato</button>
+      </a>
+    </div><!--btn-contato-->    
     </div><!--interface-->
   </header>
 
@@ -45,9 +46,9 @@
         <div class="flex">
           <div class="txt-topo-site">
             <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL<span>.</span></h1>
-            <p>Criatividade e inovação andam lado a lado. Com uma combinação única de design impactante funcionalidade intuitiva e otimização para resultados, estou pronto(a) para criar presença online dos sonhos</p>
+            <p>Criatividade e inovação andam lado a lado. Com uma combinação única de disign impactante funcionalidade intuitiva e otimização para resultados, estou pronto para criar presença neste mercado de técnologia</p>
             <div class="btn-contato">
-              <a href="#contato">
+              <a href="#" data-target="contato">
                 <button>Entre em Contato</button>
               </a>
             </div>
@@ -66,19 +67,25 @@
           <div class="especialidades-box">
             <i class="bi bi-code-square"></i>
             <h3>WebSite</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, Nulla rem dolore inventore delectus at.</p>
+            <p>Desenvolver websites elegantes e funcionais é minha <span>paixão</span>. Com <span>habilidades</span> em design intuitivo e desenvolvimento robusto, crio websites que não apenas <span>impressionam</span> visualmente, mas também oferecem uma <span>experiência</span> de usuário excepcional. Eu foco em cada detalhe, desde a navegação fluida até o layout <span>responsivo</span>, para garantir que os visitantes do site tenham uma interação <span>agradável e envolvente</span>.
+
+            </p>
           </div>
 
           <div class="especialidades-box">
-            <i class="bi bi-file-type-js"></i>
+            <i class="bi bi-filetype-jsx"></i>
             <h3>React</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, Nulla rem dolore inventore delectus at.</p>
+            <p>Como entusiasta do <span>React</span>, tenho experiência em construir poderosas interfaces de usuário e <span>ações dinâmicas</span>. Minha habilidade em React me permite criar componentes <span>interativos e reutilizáveis</span>, proporcionando uma experiência de usuário suave e responsiva. Eu mantenho-me <span>atualizado</span> com as últimas tendências e melhores práticas do React para garantir que minhas aplicações sejam eficientes, escaláveis e <span>fáceis de manter</span>.
+
+            </p>
           </div>
 
           <div class="especialidades-box">
             <i class="bi bi-git"></i>
             <h3>Git</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, Nulla rem dolore inventore delectus at.</p>
+            <p>A colaboração <span>eficaz</span> e o controle de versão são fundamentais para qualquer projeto de desenvolvimento. Minha <span>experiência</span> em Git me permite gerenciar projetos de forma colaborativa, <span>coordenar</span> com outros desenvolvedores e garantir que o código seja mantido de forma <span>organizada e livre de conflitos</span>. Eu valorizo a transparência e a <span>eficiência</span> no processo de desenvolvimento, e o Git é uma ferramenta essencial que utilizo para alcançar esses <span>objetivos</span>.
+
+            </p>
           </div>
         </div>
       </div>
@@ -93,8 +100,8 @@
 
           <div class="txt-sobre">
             <h2>MUITO PRAZER, <span>SOU YAGO CALOMINO.</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, Nulla rem dolore inventore delectus at.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, Nulla rem dolore inventore delectus at.</p>
+            <p>Hello, World! Tudo bem? Me chamo <span>Yago Ferro Calomino</span> tenho 25 anos, fomardo em Música e História</p>
+            <p>Sou <span>apaixonado</span> por técnologia, atualmente me foco no estudo e prática de Front/Backend, na área do Desenvolvimento. Quer me conhecer um pouco mais? Clique nos botões abaixo e venha me conhecer mais!</p>
             <div class="btn-social">
               <a href="https://github.com/YagoCalomino" target="_blank"><button><i class="bi bi-github"></i></button></a>
               <a href="https://www.linkedin.com/in/yagoferrocalomino/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
@@ -110,13 +117,21 @@
         <h2 class="titulo">MEU <span>PORTIFÓLIO</span>.</h2>
         <div class="flex">
           <div class="img-port" style="background-image: url(images/imagem.jpg);">
-            <div class="overlay">Projeto 1</div>
+            <div class="overlay">Cookfy</div>
+        </div>
+        
+        <script>
+            document.querySelector(".img-port").addEventListener("click", function() {
+                window.open("https://cookfy.surge.sh", "_blank");
+            });
+        </script>
+        
+        
+          <div class="img-port" style="background-image: url(images/EM\ ANDAMENTO.jpg);">
+            <div class="overlay">Projeto em andamento</div>
           </div>
-          <div class="img-port" style="background-image: url(images/imagem.jpg);">
-            <div class="overlay">Projeto 2</div>
-          </div>
-          <div class="img-port" style="background-image: url(images/imagem.jpg);">
-            <div class="overlay">Projeto 3</div>
+          <div class="img-port" style="background-image: url(images/EM\ ANDAMENTO.jpg);">
+            <div class="overlay">Projeto em andamento</div>
           </div>
         </div>
       </div>
@@ -128,17 +143,48 @@
 
         <form action="">
           <input type="text" name="" id="" placeholder="Seu Nome Completo:" required>
-          <input type="email" name="" id="" placeholder="Seu E-Mail:" required>
-          <input type="tel" name="" id="" placeholder="Seu Celular:">
+          <input type="text" name="" id="" placeholder="Seu E-Mail:" required>
+          <input type="text" name="" id="" placeholder="Seu Celular:">
           <textarea name="" id="" placeholder="Sua Mensagem" required></textarea>
           <div class="btn-enviar"><input type="submit" value="Enviar"></div>
         </form>
       </div>
     </section>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Adicionar rolagem suave para links no menu
+    var menuLinks = document.querySelectorAll(".menu-desktop a");
+    menuLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute("data-target");
+            var targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Adicionar rolagem suave para o botão "Contato"
+    var contatoButton = document.querySelector(".btn-contato a");
+    contatoButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        var targetId = this.getAttribute("data-target");
+        var targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
+  </script>
   </main>
 
   <footer>
-    <div class="inteface">
+    <div class="interface">
       <div class="line-footer">
         <div class="flex">
           <div class="logo-footer">
@@ -148,7 +194,7 @@
             <a href="https://github.com/YagoCalomino" target="_blank"><button><i class="bi bi-github"></i></button></a>
             <a href="https://www.linkedin.com/in/yagoferrocalomino/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
             <a href="https://www.instagram.com/yago.calomino/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
-          </div><!--btn-social-->
+        </div><!--btn-social-->
         </div>
       </div><!--line-footer-->
 

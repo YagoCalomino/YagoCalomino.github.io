@@ -17,14 +17,6 @@ body {
   margin: 0 auto;
 }
 
-.btn-contato button,
-.btn-social button,
-.especialidades .especialidades-box,
-.img-port,
-.overlay,
-form .btn-enviar input {
-  transition: all 0.5s ease-in-out;
-}
 
 .btn-contato button {
   padding: 10px 40px;
@@ -34,14 +26,15 @@ form .btn-enviar input {
   border: 0;
   border-radius: 30px;
   cursor: pointer;
+  transition: .2s;
 }
 
 button:hover, form .btn-enviar input:hover {
   box-shadow: 0px 0px 8px #fff; 
   transform: scale(1.05);
-}
+ }
 
-.btn-social button {
+ .btn-social button {
   width: 60px;
   height: 60px;
   border-radius: 30px;
@@ -50,6 +43,7 @@ button:hover, form .btn-enviar input:hover {
   font-size: 22px;
   cursor: pointer;
   margin: 0 5px;
+  transition: 0.2s;
 }
 
 .flex {
@@ -63,6 +57,9 @@ h2.titulo {
 }
 
 h2.titulo span {
+  color: #00ff08;
+}
+p span{
   color: #00ff08;
 }
 /* Estilo Cabeçalho */
