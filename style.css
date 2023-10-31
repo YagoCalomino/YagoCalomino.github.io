@@ -305,6 +305,19 @@ form .btn-enviar input {
   transition: .2s;
 }
 
+.sucess,
+.error {
+  text-align: center;
+}
+
+.sucess {
+  color: greenyellow;
+}
+
+.error {
+  color: tomato;
+}
+
 /* Estilo do Rodapé */
 
 footer {
