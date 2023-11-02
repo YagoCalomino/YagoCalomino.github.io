@@ -118,12 +118,12 @@
       <div class="interface">
         <h2 class="titulo">MEU <span>PORTIFÓLIO</span>.</h2>
         <div class="flex">
-          <div class="img-port" style="background-image: url(images/imagem.jpg);">
+          <div class="img-port" id="img1" style="background-image: url(images/imagem.jpg);">
             <div class="overlay">Cookfy</div>
         </div>
         
         <script>
-            document.querySelector(".img-port").addEventListener("click", function() {
+            document.querySelector("#img1").addEventListener("click", function() {
                 window.open("https://cookfy.surge.sh", "_blank");
             });
         </script>
@@ -132,9 +132,14 @@
           <div class="img-port" style="background-image: url(images/EM\ ANDAMENTO.jpg);">
             <div class="overlay">Projeto em andamento</div>
           </div>
-          <div class="img-port" style="background-image: url(images/EM\ ANDAMENTO.jpg);">
-            <div class="overlay">Projeto em andamento</div>
+          <div class="img-port" id="img3" style="background-image: url(images/Design\ sem\ nome\ \(1\).jpg);">
+            <div class="overlay">Tênis Store</div>
           </div>
+          <script>
+            document.querySelector("#img3").addEventListener("click", function() {
+                window.open("https://yagocalomino.github.io/Ecommerce/", "_blank");
+            });
+        </script>
         </div>
       </div>
     </section>
@@ -148,7 +153,9 @@
           <input type="text" name="email" id="email" placeholder="Seu E-Mail:" required>
           <input type="text" name="telefone" id="telefone" placeholder="Seu Celular:">
           <textarea name="mensagem" id="mensagem" placeholder="Sua Mensagem" required></textarea>
-          <div class="btn-enviar"><input type="submit" data-button value="Enviar"></div>
+          <div class="btn-enviar">
+            <input type="submit" data-button id="enviarBtn" value="Enviar">
+          </div>          
         </form>
       </div>
     </section>

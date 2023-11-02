@@ -3,21 +3,21 @@ class FormSubmit {
         this.settings = settings;
         this.form = document.querySelector(settings.form);
         this.formButton = document.querySelector(settings.button);
-        if(this.form) {
+        if (this.form) {
             this.url = this.form.getAttribute("action");
         }
         this.sendForm = this.sendForm.bind(this);
     }
 
-    displaySucess() {
-        this.form.innerHTML = this.settings.sucess;
+    displaySuccess() {
+        this.form.innerHTML = this.settings.success;
     }
 
     displayError() {
         this.form.innerHTML = this.settings.error;
     }
 
-    getFormObject () {
+    getFormObject() {
         const formObject = {};
         const fields = this.form.querySelectorAll("[name]");
         fields.forEach((field) => {
@@ -26,41 +26,46 @@ class FormSubmit {
         return formObject;
     }
 
-    onSubmission(event) {
+    onButtonClick(event) {
         event.preventDefault();
-        event.target.disabled = true;
-        event.target.innerText = "Enviando...";
+        this.formButton.value = "Enviando...";
+        this.formButton.disabled = true;
+        this.sendForm(event);
     }
 
     async sendForm(event) {
-        try{
-            this.onSubmission(event);
-        await fetch(this.url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify(this.getFormObject()),
-        });
-        this.displaySucess();
-    } catch(error) {
-        this.displayError();
-        throw new Error(error);
+        try {
+            await fetch(this.url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(this.getFormObject()),
+            });
+            this.displaySuccess();
+        } catch (error) {
+            this.displayError();
+            throw new Error(error);
+        }
     }
-}
 
     init() {
-        if(this.form) this.formButton.addEventListener("click", this.sendForm);
+        if (this.form) {
+            this.formButton.addEventListener("click", (event) => {
+                this.onButtonClick(event);
+            });
+        }
         return this;
     }
 }
 
-const formSubmit = new FormSubmit({
-    form: "[data-form]",
-    button: "[data-button]",
-    sucess: "<h1 class='sucess'>Mensagem Enviada com Sucesso!</h1>",
-    error: "<h1 class='error'>Não foi posivel enviar a mensagem.</h1>",
+document.addEventListener("DOMContentLoaded", function() {
+    const formSubmit = new FormSubmit({
+        form: "[data-form]",
+        button: "[data-button]",
+        success: "<h1 class='success'>Mensagem Enviada com Sucesso!</h1>",
+        error: "<h1 class='error'>Não foi possível enviar a mensagem.</h1>",
+    });
+    formSubmit.init();
 });
-
-formSubmit.init();
