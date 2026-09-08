@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Yago Calomino | Data Engineer & Full-Stack Developer",
   description:
-    "Portfolio of Yago Calomino — Data Engineer, Data Analyst, and Full-Stack Developer. Specializing in PostgreSQL, Oracle, Python, Power BI, React, Next.js, and process automation with Lean Six Sigma.",
+    "Portfolio of Yago Calomino, Data Engineer, Data Analyst, and Full-Stack Developer. Specializing in PostgreSQL, Oracle, Python, Power BI, React, Next.js, and process automation with Lean Six Sigma.",
   keywords: [
     "Data Engineer",
     "Data Analyst",

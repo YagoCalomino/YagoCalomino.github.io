@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { SectionLabel } from "@/components/SectionLabel";
 
 const PHOTOS = [
   { src: "/profile-main.jpeg", alt: "Yago Calomino" },
-  { src: "/jpr-event-1.jpeg",  alt: "JPR — Jornada Paulista de Radiologia" },
-  { src: "/jpr-event-2.jpeg",  alt: "JPR — Jornada Paulista de Radiologia" },
+  { src: "/jpr-event-1.jpeg",  alt: "JPR, Jornada Paulista de Radiologia" },
+  { src: "/jpr-event-2.jpeg",  alt: "JPR, Jornada Paulista de Radiologia" },
 ];
 
 export function AboutSection() {
@@ -17,12 +16,8 @@ export function AboutSection() {
   const t = d.about;
 
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-32 md:py-40 px-6">
       <div className="mx-auto max-w-5xl">
-        <RevealOnScroll>
-          <SectionLabel number="01" label={t.section_label} />
-        </RevealOnScroll>
-
         <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:gap-16 items-start">
           {/* Bio */}
           <RevealOnScroll delay={60}>
@@ -142,7 +137,7 @@ function PhotoCarousel() {
       <div
         className="absolute -inset-4 rounded-2xl opacity-20"
         style={{
-          background: "linear-gradient(135deg, rgba(99,102,241,0.5), rgba(20,184,166,0.3))",
+          background: "linear-gradient(135deg, rgba(37,99,235,0.5), rgba(37,99,235,0.15))",
           filter: "blur(20px)",
         }}
         aria-hidden="true"
@@ -152,7 +147,7 @@ function PhotoCarousel() {
       <div
         className="absolute -inset-px rounded-2xl"
         style={{
-          background: "linear-gradient(135deg, rgba(99,102,241,0.45), rgba(20,184,166,0.25), rgba(99,102,241,0.1))",
+          background: "linear-gradient(135deg, rgba(37,99,235,0.45), rgba(255,255,255,0.12), rgba(37,99,235,0.1))",
         }}
         aria-hidden="true"
       />
@@ -194,7 +189,7 @@ function PhotoCarousel() {
               style={{
                 height: "6px",
                 width: idx === current ? "16px" : "6px",
-                background: idx === current ? "#6366f1" : "rgba(255,255,255,0.4)",
+                background: idx === current ? "#2563eb" : "rgba(255,255,255,0.4)",
               }}
             />
           ))}

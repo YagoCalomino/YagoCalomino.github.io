@@ -10,11 +10,11 @@ export const es: Dictionary = {
     contact: "Contacto",
   },
   hero: {
-    eyebrow: "Ingeniería de Datos · Análisis de Procesos · Dev Full-Stack",
-    badge_data: "Ingeniero de Datos & Analista de Procesos",
-    badge_dev: "Desarrollador Full-Stack",
+    eyebrow: "Analista de BI & Datos  ·  Gestión de Procesos",
+    badge_data: "Analista de BI & Datos",
+    badge_dev: "Gestión de Procesos & Proyectos",
     value_prop:
-      "Construyo la infraestructura de datos que hace posibles las decisiones, desde esquemas PostgreSQL y pipelines Python hasta dashboards Power BI y las aplicaciones web que los exponen. Practicante de Lean Six Sigma. Obsesionado con los detalles.",
+      "Analizo y visualizo datos para que las decisiones operacionales se tomen con evidencias, no con intuición. Trabajo con PostgreSQL, Power BI y Lean Six Sigma, con foco en análisis de causa raíz e impacto medible.",
     cta_work: "Ver Mi Trabajo",
     cta_resume: "Descargar CV",
     scroll: "scroll",
@@ -45,11 +45,15 @@ export const es: Dictionary = {
   },
   skills: {
     section_label: "Habilidades",
-    heading: "Kit de herramientas técnico",
-    group_data: "Datos & Analytics",
-    group_engineering: "Ingeniería & Infra",
-    group_fullstack: "Full-Stack & Dev",
-    group_methodologies: "Metodologías",
+    heading: "Competencias",
+    subheading:
+      "Especializado en transformar datos brutos en decisiones, con foco en BI, SQL y gestión analítica de procesos.",
+    group_bi: "BI & Analytics",
+    group_sql: "SQL & Datos",
+    group_process: "Gestión & Procesos",
+    group_dev: "Desarrollo",
+    primary_badge: "Principal",
+    tools_label: "Herramientas",
   },
   courses: {
     section_label: "Cursos",
@@ -65,6 +69,7 @@ export const es: Dictionary = {
   experience: {
     section_label: "Trayectoria",
     heading: "Trayectoria Profesional",
+    subheading: "Del análisis de negocios al procesamiento de datos, siempre orientado por métricas.",
     label_current: "Presente",
     label_focus: "// enfoque",
     label_progression: "// progresión",
@@ -72,16 +77,10 @@ export const es: Dictionary = {
   },
   projects: {
     section_label: "Proyectos",
-    heading: "Proyectos Personales",
-    subtitle: "Sistemas reales. Problemas reales resueltos.",
-    live: "En vivo",
-    soon: "Pronto",
-    impact_label: "Impacto & Enfoque",
-    modal_details: "Detalles del Proyecto",
-    modal_stack: "Stack Técnico",
-    modal_close: "Cerrar",
-    modal_view_live: "Ver Demo",
-    modal_view_github: "Ver en GitHub",
+    heading: "Proyectos",
+    subtitle:
+      "Sistemas, plataformas y análisis construidos con datos reales. Cada carpeta abre con capturas y detalles técnicos.",
+    folder_hint: "Pasa el cursor para ver capturas, haz clic para abrir detalles",
   },
   contact: {
     section_label: "05 / Contacto",

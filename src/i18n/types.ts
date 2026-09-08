@@ -47,10 +47,13 @@ export type Dictionary = {
   skills: {
     section_label: string;
     heading: string;
-    group_data: string;
-    group_engineering: string;
-    group_fullstack: string;
-    group_methodologies: string;
+    subheading: string;
+    group_bi: string;
+    group_sql: string;
+    group_process: string;
+    group_dev: string;
+    primary_badge: string;
+    tools_label: string;
   };
   courses: {
     section_label: string;
@@ -67,18 +70,12 @@ export type Dictionary = {
     section_label: string;
     heading: string;
     subtitle: string;
-    live: string;
-    soon: string;
-    impact_label: string;
-    modal_details: string;
-    modal_stack: string;
-    modal_close: string;
-    modal_view_live: string;
-    modal_view_github: string;
+    folder_hint: string;
   };
   experience: {
     section_label: string;
     heading: string;
+    subheading: string;
     label_current: string;
     label_focus: string;
     label_progression: string;

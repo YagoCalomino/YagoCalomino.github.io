@@ -3,7 +3,6 @@
 import { SOCIAL } from "@/data/social";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { SectionLabel } from "@/components/SectionLabel";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 function DownloadIcon() {
@@ -34,12 +33,8 @@ export function ContactSection() {
   const t = d.contact;
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-32 md:py-40 px-6">
       <div className="mx-auto max-w-5xl">
-        <RevealOnScroll>
-          <SectionLabel number="06" label={t.section_label} />
-        </RevealOnScroll>
-
         {/* Main card */}
         <RevealOnScroll delay={60}>
           <div
@@ -51,7 +46,7 @@ export function ContactSection() {
               className="pointer-events-none absolute inset-0 transition-opacity duration-700"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 65% at 50% 110%, rgba(99,102,241,0.1) 0%, transparent 70%)",
+                  "radial-gradient(ellipse 70% 65% at 50% 110%, rgba(37,99,235,0.1) 0%, transparent 70%)",
               }}
             />
             {/* Hover top edge glow */}
@@ -60,14 +55,14 @@ export function ContactSection() {
             <div
               className="pointer-events-none absolute -top-20 -left-20 h-40 w-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               style={{
-                background: "radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%)",
+                background: "radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%)",
                 filter: "blur(20px)",
               }}
             />
             <div
               className="pointer-events-none absolute -bottom-20 -right-20 h-40 w-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               style={{
-                background: "radial-gradient(circle, rgba(20,184,166,0.1), transparent 70%)",
+                background: "radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%)",
                 filter: "blur(20px)",
               }}
             />
@@ -86,7 +81,7 @@ export function ContactSection() {
               <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row">
                 <a
                   href={SOCIAL.resume}
-                  download
+                  download="Yago Calomino.pdf"
                   className="glow-button flex h-12 items-center gap-2.5 rounded-lg bg-accent-indigo px-8 text-sm font-semibold text-white cursor-pointer"
                 >
                   <DownloadIcon />

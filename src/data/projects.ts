@@ -1,57 +1,109 @@
-import type { LocalizedString } from "@/i18n/types";
+import type { FolderColors, FolderProject } from "@/components/ui/3d-folder";
 
-export type Project = {
+export type ProjectStatus = "closed-beta" | "open-source" | "coming-soon";
+
+export interface ProjectFolder {
+  id: string;
   title: string;
-  role: string;
-  description: LocalizedString;
-  focus: LocalizedString;
-  stack: string[];
-  images?: string[];
-  links: {
-    live?: string;
-    github?: string;
-  };
-};
+  categoryLabel: string;
+  description: string;
+  impact: string;
+  tags: string[];
+  status: ProjectStatus;
+  githubUrl?: string;
+  liveUrl?: string;
+  folderColors: FolderColors;
+  screenshots: FolderProject[];
+  screenshotBackground?: string;
+}
 
-export const PROJECTS: Project[] = [
+// ─── Folder data (screenshots reais em /public/screenshots/) ───
+
+export const projectFolders: ProjectFolder[] = [
   {
-    title: "SUS-Flow",
-    role: "Full-Stack & Data",
-    description: {
-      pt: "Sistema híbrido de gestão de filas em saúde com IA Generativa para triagem automatizada de pacientes com base em protocolos clínicos.",
-      en: "A hybrid healthcare queue management system utilizing Generative AI for automated patient triage based on clinical protocols.",
-      es: "Sistema híbrido de gestión de colas en salud con IA Generativa para triaje automatizado de pacientes basado en protocolos clínicos.",
+    id: "job-analyzer",
+    title: "Job Analyzer Platform",
+    categoryLabel: "Data Engineer & Back-End",
+    description:
+      "Plataforma automatizada que agrega, normaliza e analisa dados do mercado de trabalho consumindo múltiplas APIs externas, em um ciclo completo de extração a insight, com análise de fit por IA.",
+    impact:
+      "Extração via múltiplos adaptadores (Gupy, Adzuna, JSearch, Lever BR), análise de compatibilidade currículo-vaga com IA, kanban de candidaturas e busca automática configurável.",
+    tags: ["Python", "FastAPI", "Next.js", "React", "PostgreSQL", "SQL"],
+    status: "closed-beta",
+    folderColors: {
+      back: "#0f766e",
+      front: "#0d9488",
+      tab: "#115e59",
     },
-    focus: {
-      pt: "Construído com arquitetura resiliente para fluxos operacionais. Demonstra modelagem de dados complexa para o setor de saúde e visualização de dashboards em tempo real.",
-      en: "Built with a resilient architecture to handle operational workflows. Demonstrates complex data modeling for the healthcare sector and real-time dashboard visualization.",
-      es: "Construido con arquitectura resiliente para flujos operacionales. Demuestra modelado de datos complejo para el sector salud y visualización de dashboards en tiempo real.",
-    },
-    stack: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "Gemini AI"],
-    images: [],
-    links: {
-      live: "https://sus-flow.vercel.app",
-      github: undefined,
-    },
+    screenshots: [
+      {
+        id: "ja-1",
+        image: "/screenshots/ja-dashboard.png",
+        title: "Dashboard analítico",
+      },
+      {
+        id: "ja-2",
+        image: "/screenshots/ja-candidaturas.png",
+        title: "Board de candidaturas",
+      },
+      {
+        id: "ja-3",
+        image: "/screenshots/ja-fit-ia.png",
+        title: "Análise de Fit com IA",
+      },
+    ],
   },
   {
-    title: "Job Analyzer Platform",
-    role: "Data Engineer & Back-End",
-    description: {
-      pt: "Plataforma automatizada que agrega, normaliza e analisa dados do mercado de trabalho consumindo múltiplas APIs externas.",
-      en: "An automated platform that aggregates, normalizes, and analyzes job market data by consuming multiple external APIs.",
-      es: "Plataforma automatizada que agrega, normaliza y analiza datos del mercado laboral consumiendo múltiples APIs externas.",
+    id: "sus-flow",
+    title: "SUS-Flow",
+    categoryLabel: "Full-Stack & Dados de Saúde",
+    description:
+      "Aplicação web para gestão de filas de pronto-atendimento do SUS, implementando o Protocolo de Manchester de Classificação de Risco. Painel público em tempo real via SSE e portal de triagem assistido por IA (Gemini).",
+    impact:
+      "Motor de classificação em dois estágios. Rule engine determinístico síncrono + IA como segundo estágio consultivo. Dados sintéticos por cron, sem dados reais de pacientes (LGPD).",
+    tags: ["Next.js 14", "Neon PostgreSQL", "Prisma", "Gemini AI", "Tailwind CSS", "Vitest"],
+    status: "open-source",
+    githubUrl: "https://github.com/YagoCalomino/sus-flow",
+    liveUrl: "https://sus-flow.vercel.app/",
+    screenshotBackground: "#f8fafc",
+    folderColors: {
+      back: "#1d4ed8",
+      front: "#2563eb",
+      tab: "#1e40af",
     },
-    focus: {
-      pt: "Demonstra extração robusta de dados, integração de APIs e capacidade de estruturar dados dispersos em insights acionáveis para o usuário final.",
-      en: "Demonstrates robust data extraction, API integration, and the ability to structure messy, disparate data into actionable insights for the end user.",
-      es: "Demuestra extracción robusta de datos, integración de APIs y capacidad de estructurar datos dispersos en insights accionables para el usuario final.",
+    screenshots: [
+      {
+        id: "sf-1",
+        image: "/screenshots/sf-painel.png",
+        title: "Painel de Filas SUS",
+      },
+      {
+        id: "sf-2",
+        image: "/screenshots/sf-triagem.png",
+        title: "Portal de Triagem",
+      },
+      {
+        id: "sf-3",
+        image: "/screenshots/sf-ia.png",
+        title: "Sugestão da IA",
+      },
+    ],
+  },
+  {
+    id: "healthlens",
+    title: "HealthLens",
+    categoryLabel: "Analytics & Saúde Pública",
+    description:
+      "Plataforma de analytics de saúde pública com dados do DataSUS (SIM, SIH, SINAN). Inclui ingestão de dados, forecasting com ML (AutoARIMA e Prophet) e painéis epidemiológicos com mapas coropléticos.",
+    impact:
+      "Dashboards de Vigilância Epidemiológica com análise de risco por região e predição de tendências de saúde com dados reais do SUS.",
+    tags: ["Python", "FastAPI", "React", "PostgreSQL", "AutoARIMA", "Prophet"],
+    status: "coming-soon",
+    folderColors: {
+      back: "#6d28d9",
+      front: "#7c3aed",
+      tab: "#5b21b6",
     },
-    stack: ["Python", "FastAPI", "Next.js", "React", "SQL"],
-    images: [],
-    links: {
-      live: undefined,
-      github: undefined,
-    },
+    screenshots: [], // sem screenshots ainda
   },
 ];

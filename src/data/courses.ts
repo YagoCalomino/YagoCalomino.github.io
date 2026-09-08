@@ -15,9 +15,9 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     title: {
-      pt: "Power BI — Do Básico ao Avançado",
-      en: "Power BI — From Basics to Advanced",
-      es: "Power BI — De lo Básico a lo Avanzado",
+      pt: "Power BI, do Básico ao Avançado",
+      en: "Power BI, from Basics to Advanced",
+      es: "Power BI, de lo Básico a lo Avanzado",
     },
     issuer: "Udemy",
     issued: "2023",
@@ -30,9 +30,9 @@ export const COURSES: Course[] = [
   },
   {
     title: {
-      pt: "SQL — Banco de Dados Relacionais",
-      en: "SQL — Relational Databases",
-      es: "SQL — Bases de Datos Relacionales",
+      pt: "SQL, Banco de Dados Relacionais",
+      en: "SQL, Relational Databases",
+      es: "SQL, Bases de Datos Relacionales",
     },
     issuer: "Alura",
     issued: "2022",
@@ -60,9 +60,9 @@ export const COURSES: Course[] = [
   },
   {
     title: {
-      pt: "FastAPI — APIs Modernas com Python",
-      en: "FastAPI — Modern APIs with Python",
-      es: "FastAPI — APIs Modernas con Python",
+      pt: "FastAPI, APIs Modernas com Python",
+      en: "FastAPI, Modern APIs with Python",
+      es: "FastAPI, APIs Modernas con Python",
     },
     issuer: "Udemy",
     issued: "2024",
@@ -75,9 +75,9 @@ export const COURSES: Course[] = [
   },
   {
     title: {
-      pt: "Lean Six Sigma — Yellow Belt",
-      en: "Lean Six Sigma — Yellow Belt",
-      es: "Lean Six Sigma — Yellow Belt",
+      pt: "Lean Six Sigma, Yellow Belt",
+      en: "Lean Six Sigma, Yellow Belt",
+      es: "Lean Six Sigma, Yellow Belt",
     },
     issuer: "FM2S",
     issued: "2023",

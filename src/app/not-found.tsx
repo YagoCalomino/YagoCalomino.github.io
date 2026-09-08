@@ -19,7 +19,7 @@ export default function NotFound() {
         <h1
           className="font-mono text-8xl font-bold leading-none"
           style={{
-            background: "linear-gradient(135deg, #ffffff 0%, #a5b4fc 40%, #6366f1 70%, #14b8a6 100%)",
+            background: "linear-gradient(135deg, #ffffff 0%, #93b4fd 40%, #2563eb 70%, #93b4fd 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -37,13 +37,13 @@ export default function NotFound() {
           className="inline-flex h-11 items-center gap-2 rounded-lg px-7 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
           style={{
             background: "var(--color-accent-indigo)",
-            boxShadow: "0 0 0 0 rgba(99,102,241,0)",
+            boxShadow: "0 0 0 0 rgba(37,99,235,0)",
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(99,102,241,0.3)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(37,99,235,0.3)";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 0 rgba(99,102,241,0)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 0 rgba(37,99,235,0)";
           }}
         >
           ← Back to portfolio

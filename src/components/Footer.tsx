@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-white/[0.04] py-8 px-6"
+      className="py-8 px-6"
       style={{ background: "var(--color-background)" }}
     >
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">

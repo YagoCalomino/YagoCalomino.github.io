@@ -3,34 +3,19 @@
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { COURSES, type CourseCategory } from "@/data/courses";
-import { SectionLabel } from "@/components/SectionLabel";
 import { ExternalLinkIcon } from "@/components/icons";
 
-const CATEGORY_COLORS: Record<CourseCategory, { border: string; bg: string; text: string; className: string }> = {
-  data: {
-    border: "rgba(99,102,241,0.25)",
-    bg: "rgba(99,102,241,0.08)",
-    text: "var(--color-accent-indigo)",
-    className: "badge-data",
-  },
-  dev: {
-    border: "rgba(20,184,166,0.25)",
-    bg: "rgba(20,184,166,0.08)",
-    text: "var(--color-accent-teal)",
-    className: "badge-dev",
-  },
-  methodology: {
-    border: "rgba(245,158,11,0.25)",
-    bg: "rgba(245,158,11,0.08)",
-    text: "#fbbf24",
-    className: "badge-methodology",
-  },
-  cloud: {
-    border: "rgba(100,116,139,0.25)",
-    bg: "rgba(100,116,139,0.08)",
-    text: "var(--color-muted-foreground)",
-    className: "badge-cloud",
-  },
+const NEUTRAL_BADGE = {
+  border: "rgba(255,255,255,0.1)",
+  bg: "rgba(255,255,255,0.04)",
+  text: "rgba(255,255,255,0.55)",
+};
+
+const CATEGORY_COLORS: Record<CourseCategory, typeof NEUTRAL_BADGE> = {
+  data: NEUTRAL_BADGE,
+  dev: NEUTRAL_BADGE,
+  methodology: NEUTRAL_BADGE,
+  cloud: NEUTRAL_BADGE,
 };
 
 const CATEGORY_ICONS: Record<CourseCategory, React.ReactNode> = {
@@ -52,16 +37,14 @@ export function CoursesSection() {
   };
 
   return (
-    <section id="courses" className="py-24 px-6">
+    <section id="courses" className="py-32 md:py-40 px-6">
       <div className="mx-auto max-w-5xl">
         <RevealOnScroll>
-          <SectionLabel number="04" label={t.section_label} />
-
-          <div className="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-24 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between max-w-xl">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {t.heading}
             </h2>
-            <p className="text-sm text-muted-foreground">{t.subtitle}</p>
+            <p className="mt-4 text-sm text-muted-foreground">{t.subtitle}</p>
           </div>
         </RevealOnScroll>
 
@@ -88,8 +71,8 @@ export function CoursesSection() {
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.transform = "translateY(-3px)";
-                    el.style.boxShadow = `0 8px 28px rgba(99,102,241,0.12), 0 0 0 1px rgba(99,102,241,0.18)`;
-                    el.style.borderColor = "rgba(99,102,241,0.25)";
+                    el.style.boxShadow = `0 8px 28px rgba(37,99,235,0.12), 0 0 0 1px rgba(37,99,235,0.18)`;
+                    el.style.borderColor = "rgba(37,99,235,0.25)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;

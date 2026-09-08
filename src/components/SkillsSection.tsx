@@ -2,53 +2,38 @@
 
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { SectionLabel } from "@/components/SectionLabel";
+import { SkillsMarquee } from "@/components/ui/skills-marquee";
 
 type SkillGroup = {
-  labelKey: "group_data" | "group_engineering" | "group_fullstack" | "group_methodologies";
-  color: "indigo" | "teal" | "slate";
-  accentColor: string;
-  glowColor: string;
+  labelKey: "group_bi" | "group_sql" | "group_process" | "group_dev";
   icon: React.ReactNode;
   skills: string[];
-  span?: "wide" | "normal";
+  span: "wide" | "normal";
 };
 
 const SKILL_GROUPS: SkillGroup[] = [
   {
-    labelKey: "group_data",
-    color: "indigo",
-    accentColor: "rgba(99,102,241,0.2)",
-    glowColor: "rgba(99,102,241,0.06)",
+    labelKey: "group_bi",
     icon: <DataIcon />,
-    skills: ["Power BI", "Python", "R", "Excel"],
+    skills: ["Power BI", "DAX", "Power Query (M)", "Python, Pandas / NumPy", "Excel Avançado"],
     span: "wide",
   },
   {
-    labelKey: "group_engineering",
-    color: "teal",
-    accentColor: "rgba(20,184,166,0.2)",
-    glowColor: "rgba(20,184,166,0.05)",
+    labelKey: "group_sql",
     icon: <DBIcon />,
-    skills: ["PostgreSQL", "Oracle"],
+    skills: ["PostgreSQL", "Oracle SQL", "Firebird", "Modelagem Relacional", "ETL / ELT"],
     span: "normal",
   },
   {
-    labelKey: "group_fullstack",
-    color: "indigo",
-    accentColor: "rgba(99,102,241,0.2)",
-    glowColor: "rgba(99,102,241,0.06)",
-    icon: <CodeIcon />,
-    skills: ["TypeScript", "React", "Next.js", "Node.js", "FastAPI", "Tailwind CSS"],
-    span: "normal",
-  },
-  {
-    labelKey: "group_methodologies",
-    color: "slate",
-    accentColor: "rgba(100,116,139,0.2)",
-    glowColor: "rgba(100,116,139,0.04)",
+    labelKey: "group_process",
     icon: <ProcessIcon />,
-    skills: ["Lean Six Sigma (Yellow Belt)", "RCA", "Process Automation"],
+    skills: ["Lean Six Sigma (Yellow Belt)", "Análise de Causa-Raiz (RCA)", "DMAIC", "Mapeamento de Processos", "Power Automate"],
+    span: "normal",
+  },
+  {
+    labelKey: "group_dev",
+    icon: <CodeIcon />,
+    skills: ["TypeScript", "React / Next.js", "FastAPI", "Node.js", "Tailwind CSS", "Git / GitHub"],
     span: "wide",
   },
 ];
@@ -58,18 +43,18 @@ export function SkillsSection() {
   const t = d.skills;
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-32 md:py-40 px-6">
       <div className="mx-auto max-w-5xl">
-        {/* Section label */}
         <RevealOnScroll>
-          <SectionLabel number="03" label={t.section_label} />
-          <h2 className="mb-12 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {t.heading}
-          </h2>
+          <div className="mb-24 max-w-xl">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              {t.heading}
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{t.subheading}</p>
+          </div>
         </RevealOnScroll>
 
-        {/* Asymmetric bento grid — 3 cols on desktop */}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
           {SKILL_GROUPS.map((group, i) => (
             <RevealOnScroll
               key={group.labelKey}
@@ -80,6 +65,16 @@ export function SkillsSection() {
             </RevealOnScroll>
           ))}
         </div>
+
+        <RevealOnScroll delay={SKILL_GROUPS.length * 80}>
+          <div className="mt-16">
+            <div className="flex items-center gap-4 mb-8">
+              <h3 className="text-sm font-medium text-white/35 shrink-0">{t.tools_label}</h3>
+              <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
+            </div>
+            <SkillsMarquee />
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );
@@ -92,85 +87,51 @@ function BentoCard({
   group: SkillGroup;
   label: string;
 }) {
-  const chipStyle =
-    group.color === "teal"
-      ? {
-          border: "1px solid rgba(20,184,166,0.2)",
-          background: "rgba(20,184,166,0.06)",
-          color: "var(--color-accent-teal)",
-        }
-      : group.color === "indigo"
-      ? {
-          border: "1px solid rgba(99,102,241,0.2)",
-          background: "rgba(99,102,241,0.06)",
-          color: "var(--color-accent-indigo)",
-        }
-      : {
-          border: "1px solid var(--color-border)",
-          background: "var(--color-surface-elevated)",
-          color: "var(--color-muted-foreground)",
-        };
-
-  const iconStyle =
-    group.color === "teal"
-      ? {
-          border: "1px solid rgba(20,184,166,0.2)",
-          background: "rgba(20,184,166,0.08)",
-          color: "var(--color-accent-teal)",
-        }
-      : group.color === "indigo"
-      ? {
-          border: "1px solid rgba(99,102,241,0.2)",
-          background: "rgba(99,102,241,0.08)",
-          color: "var(--color-accent-indigo)",
-        }
-      : {
-          border: "1px solid var(--color-border)",
-          background: "var(--color-surface-elevated)",
-          color: "var(--color-muted-foreground)",
-        };
-
   return (
     <div
-      className="gradient-border h-full rounded-2xl border p-6 min-h-[200px] flex flex-col cursor-default"
+      className="relative h-full rounded-2xl border p-6 min-h-[180px] flex flex-col cursor-default"
       style={{
-        background: "var(--color-surface)",
-        borderColor: "var(--color-border)",
-        transition: "transform 200ms ease, box-shadow 200ms ease, border-color 250ms ease",
+        background: "rgba(16,17,26,0.95)",
+        borderColor: "rgba(255,255,255,0.07)",
+        transition: "background-color 200ms ease, transform 200ms ease",
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLElement;
+        el.style.background = "rgba(22,24,36,0.95)";
         el.style.transform = "translateY(-4px)";
-        el.style.boxShadow = `0 8px 32px ${group.glowColor}, 0 0 0 1px ${group.accentColor}`;
-        el.style.borderColor = group.accentColor;
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget as HTMLElement;
+        el.style.background = "rgba(16,17,26,0.95)";
         el.style.transform = "";
-        el.style.boxShadow = "";
-        el.style.borderColor = "";
       }}
     >
-      {/* Header */}
       <div className="mb-5 flex items-center gap-3">
         <div
           className="flex h-9 w-9 items-center justify-center rounded-lg shrink-0"
-          style={iconStyle}
+          style={{
+            border: "1px solid rgba(37,99,235,0.2)",
+            background: "rgba(37,99,235,0.08)",
+            color: "#2563eb",
+          }}
         >
           {group.icon}
         </div>
-        <p className="font-mono text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+        <p className="text-sm font-medium tracking-wide text-muted-foreground">
           {label}
         </p>
       </div>
 
-      {/* Chips */}
       <div className="flex flex-wrap gap-2 mt-auto">
         {group.skills.map((skill) => (
           <span
             key={skill}
             className="chip-lift rounded-full px-3 py-1 font-mono text-xs tracking-wide cursor-default"
-            style={chipStyle}
+            style={{
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.03)",
+              color: "rgba(255,255,255,0.55)",
+            }}
           >
             {skill}
           </span>

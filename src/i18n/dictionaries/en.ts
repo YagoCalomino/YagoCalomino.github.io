@@ -10,11 +10,11 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "Data Engineering · Process Analysis · Full-Stack Dev",
-    badge_data: "Data Engineer & Process Analyst",
-    badge_dev: "Full-Stack Developer",
+    eyebrow: "BI & Data Analyst  ·  Process Management",
+    badge_data: "BI & Data Analyst",
+    badge_dev: "Process & Project Management",
     value_prop:
-      "I build the data infrastructure that makes decisions possible, from PostgreSQL schemas and Python pipelines to Power BI dashboards and the web applications that surface them. Lean Six Sigma practitioner. Detail-obsessed.",
+      "I analyze and visualize data so operational decisions are made with evidence, not gut feeling. I work with PostgreSQL, Power BI and Lean Six Sigma, focused on root cause analysis and measurable impact.",
     cta_work: "View My Work",
     cta_resume: "Download Resume",
     scroll: "scroll",
@@ -45,11 +45,15 @@ export const en: Dictionary = {
   },
   skills: {
     section_label: "Skills",
-    heading: "Technical toolkit",
-    group_data: "Data & Analytics",
-    group_engineering: "Engineering & Infra",
-    group_fullstack: "Full-Stack & Dev",
-    group_methodologies: "Methodologies",
+    heading: "Skills",
+    subheading:
+      "Specialized in turning raw data into decisions, focused on BI, SQL and analytical process management.",
+    group_bi: "BI & Analytics",
+    group_sql: "SQL & Data",
+    group_process: "Process Management",
+    group_dev: "Development",
+    primary_badge: "Primary",
+    tools_label: "Tools",
   },
   courses: {
     section_label: "Courses",
@@ -65,6 +69,7 @@ export const en: Dictionary = {
   experience: {
     section_label: "Experience",
     heading: "Professional Trajectory",
+    subheading: "From business analysis to data processing, always metrics-driven.",
     label_current: "Present",
     label_focus: "// focus",
     label_progression: "// progression",
@@ -72,16 +77,10 @@ export const en: Dictionary = {
   },
   projects: {
     section_label: "Projects",
-    heading: "Personal Projects",
-    subtitle: "Real systems. Real problems solved.",
-    live: "Live",
-    soon: "Soon",
-    impact_label: "Impact & Focus",
-    modal_details: "Project Details",
-    modal_stack: "Tech Stack",
-    modal_close: "Close",
-    modal_view_live: "View Demo",
-    modal_view_github: "View on GitHub",
+    heading: "Projects",
+    subtitle:
+      "Systems, platforms and analyses built with real data. Each folder opens with screenshots and technical details.",
+    folder_hint: "Hover to preview, click to open details",
   },
   contact: {
     section_label: "05 / Contact",

@@ -26,14 +26,9 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="group relative font-mono text-sm font-bold tracking-widest uppercase select-none cursor-pointer"
+          className="group relative flex items-center select-none cursor-pointer"
         >
-          <span className="gradient-text">YC.</span>
-          {/* Underline accent */}
-          <span
-            className="absolute -bottom-0.5 left-0 h-px w-0 bg-accent-indigo transition-all duration-300 group-hover:w-full"
-            aria-hidden="true"
-          />
+          <span className="text-sm font-medium text-white/80 tracking-tight">Yago Calomino</span>
         </a>
 
         {/* Desktop nav */}
