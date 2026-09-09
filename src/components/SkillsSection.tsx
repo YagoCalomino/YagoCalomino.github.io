@@ -2,7 +2,6 @@
 
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { SkillsMarquee } from "@/components/ui/skills-marquee";
 
 type SkillGroup = {
   labelKey: "group_bi" | "group_sql" | "group_process" | "group_dev";
@@ -65,16 +64,6 @@ export function SkillsSection() {
             </RevealOnScroll>
           ))}
         </div>
-
-        <RevealOnScroll delay={SKILL_GROUPS.length * 80}>
-          <div className="mt-16">
-            <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-sm font-medium text-white/35 shrink-0">{t.tools_label}</h3>
-              <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
-            </div>
-            <SkillsMarquee />
-          </div>
-        </RevealOnScroll>
       </div>
     </section>
   );

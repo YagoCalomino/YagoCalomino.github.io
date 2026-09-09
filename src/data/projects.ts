@@ -25,9 +25,9 @@ export const projectFolders: ProjectFolder[] = [
     title: "Job Analyzer Platform",
     categoryLabel: "Data Engineer & Back-End",
     description:
-      "Plataforma automatizada que agrega, normaliza e analisa dados do mercado de trabalho consumindo múltiplas APIs externas, em um ciclo completo de extração a insight, com análise de fit por IA.",
+      "Plataforma que resolve o problema de acompanhar centenas de vagas em múltiplas fontes manualmente. Agrega, normaliza e pontua vagas de 7 plataformas (Gupy, Adzuna, JSearch, Lever BR e outras), com análise de fit currículo-vaga por IA e gestão de candidaturas em kanban.",
     impact:
-      "Extração via múltiplos adaptadores (Gupy, Adzuna, JSearch, Lever BR), análise de compatibilidade currículo-vaga com IA, kanban de candidaturas e busca automática configurável.",
+      "A decisão central foi construir adaptadores independentes por fonte, com normalização antes do scoring. Isso permite adicionar novas plataformas sem reescrever a lógica de análise. Em uso próprio, triagem de relevância que antes levava horas passou a segundos.",
     tags: ["Python", "FastAPI", "Next.js", "React", "PostgreSQL", "SQL"],
     status: "closed-beta",
     folderColors: {
@@ -58,9 +58,9 @@ export const projectFolders: ProjectFolder[] = [
     title: "SUS-Flow",
     categoryLabel: "Full-Stack & Dados de Saúde",
     description:
-      "Aplicação web para gestão de filas de pronto-atendimento do SUS, implementando o Protocolo de Manchester de Classificação de Risco. Painel público em tempo real via SSE e portal de triagem assistido por IA (Gemini).",
+      "Sistema que digitaliza a triagem de pronto-atendimento do SUS com o Protocolo de Manchester. Dois públicos: cidadãos veem filas em tempo real via painel público e enfermeiros classificam pacientes com suporte de IA.",
     impact:
-      "Motor de classificação em dois estágios. Rule engine determinístico síncrono + IA como segundo estágio consultivo. Dados sintéticos por cron, sem dados reais de pacientes (LGPD).",
+      "A decisão arquitetural principal foi separar a classificação em dois estágios: rule engine determinístico síncrono como base, e IA (Gemini) acionada só quando a confiança do engine é baixa. Velocidade sem abrir mão de precisão em casos ambíguos. Toda sugestão da IA é consultiva e o enfermeiro sempre confirma antes de salvar.",
     tags: ["Next.js 14", "Neon PostgreSQL", "Prisma", "Gemini AI", "Tailwind CSS", "Vitest"],
     status: "open-source",
     githubUrl: "https://github.com/YagoCalomino/sus-flow",
@@ -94,9 +94,9 @@ export const projectFolders: ProjectFolder[] = [
     title: "HealthLens",
     categoryLabel: "Analytics & Saúde Pública",
     description:
-      "Plataforma de analytics de saúde pública com dados do DataSUS (SIM, SIH, SINAN). Inclui ingestão de dados, forecasting com ML (AutoARIMA e Prophet) e painéis epidemiológicos com mapas coropléticos.",
+      "Plataforma de analytics de saúde pública que transforma os dados brutos do DataSUS (SIM, SIH, SINAN) em painéis interpretáveis para vigilância epidemiológica. O DataSUS tem um dos maiores volumes de dados de saúde da América Latina, com poucas interfaces que permitam explorá-los de forma acessível.",
     impact:
-      "Dashboards de Vigilância Epidemiológica com análise de risco por região e predição de tendências de saúde com dados reais do SUS.",
+      "Arquitetura de ingestão incremental por fonte, forecasting com AutoARIMA e Prophet para tendências temporais, e dashboards coropléticos de risco por município. Em desenvolvimento ativo. A complexidade está na normalização de dados de origens heterogêneas antes de qualquer visualização.",
     tags: ["Python", "FastAPI", "React", "PostgreSQL", "AutoARIMA", "Prophet"],
     status: "coming-soon",
     folderColors: {
